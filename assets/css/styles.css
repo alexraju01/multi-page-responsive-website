@@ -19,15 +19,38 @@ body {
 }
 
 nav {
-	background-color: black;
-	color: white;
 	display: flex;
 	justify-content: space-between;
-	padding: 10px;
-	font-size: 1.5rem;
+	align-items: center;
+	background-color: #111;
+	color: white;
+	padding: 1.6rem 3.2rem;
+	border-bottom: 0.2rem solid #ff0055;
+	font-size: 1.6rem;
+	font-weight: 600;
+	letter-spacing: 0.1rem;
+}
+
+nav .logo {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	color: #ff0055;
+}
+
+nav i {
+	font-size: 2rem;
 }
 
 nav ul {
 	display: flex;
-	gap: 1rem;
+	gap: 2rem;
+}
+
+nav ul li a {
+	color: white;
+}
+
+nav ul li a:hover {
+	color: #ff0055;
 }
