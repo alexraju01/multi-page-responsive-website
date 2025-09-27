@@ -158,3 +158,62 @@ nav ul li a:hover {
 	transform: scale(1.1);
 	box-shadow: 0 0 30px var(--color-accent);
 }
+
+/* ###### MAIN: Cards grid (wireframe) ###### */
+
+main {
+	padding: 2rem 1.25rem 3rem;
+	max-width: 110rem;
+	margin: 0 auto;
+}
+
+/* Cards container */
+.cards-section {
+	margin-top: 1.6rem;
+}
+
+#cards-heading {
+	font-size: 3rem;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.cards-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1.25rem;
+}
+
+/* Individual card */
+.card {
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+	border-radius: 1.4rem;
+	padding: 1.1rem;
+	border: 0.12rem solid rgba(255, 255, 255, 0.03);
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+
+	min-height: 30rem;
+}
+.card-title {
+	font-size: 1.8rem;
+	font-weight: 700;
+	color: var(--color-text);
+	text-align: center;
+}
+
+.game-row {
+	display: flex;
+	gap: 0.9rem;
+	align-items: center;
+	margin-top: 0.8rem;
+}
+.thumbnail {
+	width: 72px;
+	height: 72px;
+	border-radius: 0.9rem;
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+	border: 0.08rem solid rgba(255, 255, 255, 0.03);
+}
