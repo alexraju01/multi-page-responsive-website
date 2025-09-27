@@ -90,6 +90,8 @@ nav ul li a:hover {
 	text-align: center;
 	color: var(--color-text);
 	font-size: var(--font-size-nav);
+	overflow: hidden;
+
 	animation: zoomBackground 15s ease-in-out infinite alternate;
 }
 
@@ -125,4 +127,34 @@ nav ul li a:hover {
 		opacity: 1; /*Shows the content*/
 		transform: translateY(0);
 	}
+}
+
+.hero-content .button {
+	display: inline-block;
+	padding: 1rem 2rem;
+	background-color: var(--color-accent);
+	margin-top: 2rem;
+	border-radius: 0.5rem;
+	font-weight: 600;
+	text-transform: capitalize;
+	letter-spacing: 0.05rem;
+	transition: transform 0.3s ease box-shadow 0.3s ease;
+	animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		scale: 1.1;
+		box-shadow: 0 0 1rem var(--color-accent);
+	}
+	50% {
+		transform: scale(1.05);
+		box-shadow: 0 0 20px var(--color-accent);
+	}
+}
+
+.hero-content .button:hover {
+	transform: scale(1.1);
+	box-shadow: 0 0 30px var(--color-accent);
 }
