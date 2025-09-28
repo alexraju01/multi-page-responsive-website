@@ -1,0 +1,81 @@
+/* ##### HERO SECTION ###### */
+#hero {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: calc(100vh - 5.5rem);
+	background: url("https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg") no-repeat
+		center center/cover;
+	text-align: center;
+	color: var(--color-text);
+	font-size: var(--font-size-nav);
+
+	animation: zoomBackground 15s ease-in-out infinite alternate;
+}
+
+@keyframes zoomBackground {
+	from {
+		background-size: 100% 100%;
+	}
+	to {
+		background-size: 110% 110%;
+	}
+}
+
+#hero::before {
+	content: "";
+	background-color: rgba(0, 0, 0, 0.5);
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	z-index: 1;
+}
+
+.hero-content {
+	position: relative;
+	z-index: 2;
+	opacity: 0; /*Hide the content  */
+	transform: translateY(5rem);
+	animation: fadeSlideUp 1.2s ease-out forwards;
+	animation-delay: 0.3s;
+}
+
+@keyframes fadeSlideUp {
+	to {
+		opacity: 1; /*Shows the content*/
+		transform: translateY(0);
+	}
+}
+
+.hero-content .button {
+	display: inline-block;
+	padding: 1rem 2rem;
+	background-color: var(--color-accent);
+	margin-top: 2rem;
+	border-radius: 0.5rem;
+	font-weight: 600;
+	text-transform: capitalize;
+	letter-spacing: 0.05rem;
+	transition: transform 0.3s ease box-shadow 0.3s ease;
+	animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		scale: 1.1;
+		box-shadow: 0 0 1rem var(--color-accent);
+	}
+	50% {
+		transform: scale(1.05);
+		box-shadow: 0 0 20px var(--color-accent);
+	}
+}
+
+.hero-content .button:hover {
+	transform: scale(1.1);
+	box-shadow: 0 0 30px var(--color-accent);
+}

@@ -1,0 +1,218 @@
+/* ##### NAVBAR ###### */
+
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: var(--color-nav-bg);
+	color: var(--color-text);
+	padding: 1.2rem 3rem;
+	height: 5.5rem;
+	border-bottom: 0.2rem solid var(--color-accent);
+	font-size: var(--font-size-nav);
+	font-weight: 600;
+	letter-spacing: 0.1rem;
+	position: relative;
+}
+
+/* Logo */
+nav .logo {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	color: var(--color-accent);
+	order: 1; /* mobile order */
+}
+
+nav i {
+	font-size: 2rem;
+}
+
+.menu-wrapper {
+	order: 2;
+	height: 100%;
+}
+
+/* Nav links container */
+nav .nav-links {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	margin-right: 10rem;
+	height: 100%;
+	list-style: none;
+}
+
+/* Links styling */
+.nav-links li a {
+	color: var(--color-text);
+	text-decoration: none;
+	position: relative;
+	padding: 0.4rem 0.8rem;
+	transition: color 0.2s ease-in-out;
+}
+
+/* Hover text color */
+.nav-links li a:hover {
+	color: var(--color-accent);
+	background-color: rgba(255, 0, 85, 0.1);
+}
+
+/* Accent corners on hover */
+.nav-links li a::before,
+.nav-links li a::after {
+	content: "";
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+/* Top-right corner */
+.nav-links li a::before {
+	top: 0;
+	right: 0;
+	border-top: 0.1rem solid var(--color-accent);
+	border-right: 0.1rem solid var(--color-accent);
+}
+
+/* Bottom-left corner */
+.nav-links li a::after {
+	bottom: 0;
+	left: 0;
+	border-bottom: 0.1rem solid var(--color-accent);
+	border-left: 0.1rem solid var(--color-accent);
+}
+
+/* Show corners on hover */
+.nav-links li a:hover::before,
+.nav-links li a:hover::after,
+.nav-links li a.active::after,
+.nav-links li a.active::before {
+	opacity: 1;
+}
+
+/* Active link */
+.nav-links li a.active {
+	color: var(--color-accent);
+	font-weight: 700;
+	background-color: rgba(255, 0, 85, 0.1);
+}
+
+/* Theme toggle */
+.toggle {
+	order: 3;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+#theme-toggle {
+	display: none;
+}
+
+#theme-toggle:checked ~ body {
+	background-color: var(--color-text);
+	color: #0a0a0a;
+}
+
+/* ================================
+   HAMBURGER MENU
+================================= */
+.menu-toggle {
+	display: none; /* hidden checkbox */
+}
+
+/* Hamburger styling */
+.hamburger {
+	display: none; /* only show on mobile */
+	flex-direction: column;
+	gap: 5px;
+	cursor: pointer;
+}
+
+.hamburger span {
+	display: block;
+	width: 25px;
+	height: 3px;
+	background-color: var(--color-text);
+	border-radius: 2px;
+}
+
+/* ================================
+   MOBILE RESPONSIVE
+================================= */
+@media (max-width: 900px) {
+	nav {
+		position: relative;
+	}
+
+	/* Show hamburger on mobile */
+	.hamburger {
+		display: flex;
+	}
+
+	/* Dropdown container */
+	.menu-wrapper {
+		position: relative;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	/* Nav links dropdown */
+	.menu-wrapper .nav-links {
+		position: absolute;
+		display: none;
+		gap: 0;
+		margin-top: 1.35rem;
+		top: 100%;
+		left: 0;
+		flex-direction: column;
+		background-color: var(--color-nav-bg);
+		width: auto;
+		height: auto;
+		border: 0.15rem solid rgba(255, 255, 255, 0.03);
+		z-index: 100;
+	}
+
+	.nav-links li {
+		color: var(--color-accent);
+		border-bottom: 1px solid var(--color-accent);
+		width: 15rem;
+		height: 100%;
+		padding: 1rem 2rem;
+		background-color: pin;
+		display: flex;
+		justify-content: center;
+	}
+
+	.nav-links li a {
+		font-size: 1rem;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		padding: 1rem 2rem;
+		justify-content: center;
+	}
+	/* Show nav when checkbox is checked */
+	#menu-toggle:checked ~ .nav-links {
+		display: flex;
+	}
+
+	.nav-links li a.active {
+		color: var(--color-accent);
+		font-weight: 700;
+		width: 20rem;
+		background-color: rgba(255, 0, 85, 0.1);
+	}
+
+	/* Keep logo and theme toggle order */
+	nav .logo {
+		order: 2;
+	}
+	nav .toggle {
+		order: 3;
+	}
+}
