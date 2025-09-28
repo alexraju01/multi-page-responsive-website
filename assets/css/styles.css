@@ -265,7 +265,6 @@ footer {
 	background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
 	padding: 1.2rem;
 	width: 100%;
-
 	border: 0.12rem solid rgba(255, 255, 255, 0.03);
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
@@ -283,12 +282,13 @@ footer {
 }
 .footer-col h4 {
 	color: var(--color-text);
-	margin-bottom: 1.2rem;
+	margin-bottom: 1.6rem;
 	font-size: 1.5rem;
 	font-weight: 600;
 }
 .footer-col p,
-.footer-col ul {
+.footer-col ul,
+.footer-col ul li a {
 	color: var(--color-soft);
 	font-size: 0.95rem;
 	line-height: 1.5;
@@ -302,13 +302,22 @@ footer {
 	transition: color 0.2s ease;
 }
 
-.footer-col p:hover {
+.footer-col p:hover,
+.footer-col ul li a:hover {
 	color: #fff;
 	text-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+	text-decoration: underline;
 }
 
-.footer-col ul li {
-	margin-bottom: 0.5rem;
+.footer-col ul li,
+.footer-col p {
+	margin-bottom: 0.6rem;
+	transition: all 0.3s ease;
+}
+
+.footer-col ul li:hover,
+.footer-col p:hover {
+	scale: 1.2;
 }
 
 .footer-col ul li a {
@@ -316,11 +325,6 @@ footer {
 	font-size: 1.1rem;
 	font-weight: 500;
 	transition: color 0.2s ease;
-}
-
-.footer-col ul li a:hover {
-	color: #fff;
-	text-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
 }
 
 /* ====== Social icons ====== */
@@ -338,12 +342,13 @@ footer {
 	border-radius: 50%;
 	border: 0.12rem solid rgba(255, 255, 255, 0.08);
 	background: transparent;
-	transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+	transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.2s ease;
 }
 
 .social-btn i {
 	font-size: 1.1rem;
 	color: var(--color-soft);
+	transition: color 0.2s ease;
 }
 
 /* Hover effects for brand colors */
