@@ -5,7 +5,7 @@
 	--color-nav-bg: #111111;
 	--color-accent: #ff0055;
 	--color-border: var(--color-accent);
-	--muted: #9ca3af;
+	--color-soft: #aaa;
 	--glass: rgba(255, 255, 255, 0.03);
 
 	/* ###### Typography ###### */
@@ -229,7 +229,7 @@ main {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	color: var(--muted);
+	color: var(--color-soft);
 }
 .badge {
 	background: rgba(255, 0, 85, 0.12);
@@ -237,4 +237,144 @@ main {
 	border-radius: 0.6rem;
 	font-weight: 700;
 	color: var(--color-text);
+}
+
+/* Platforms */
+.platform-list {
+	display: flex;
+	gap: 0.6rem;
+	flex-wrap: wrap;
+	margin-top: 0.6rem;
+}
+.platform-pill {
+	padding: 1rem 1.6rem;
+	border-radius: 0.8rem;
+	background: rgba(255, 255, 255, 0.02);
+	border: 0.08rem solid rgba(255, 255, 255, 0.03);
+	font-weight: 700;
+	font-size: small;
+	color: var(--color-soft);
+}
+
+/* ###### FOOTER (wireframe) ###### */
+footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+	padding: 1.2rem;
+	width: 100%;
+
+	border: 0.12rem solid rgba(255, 255, 255, 0.03);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+.footer-inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 1.25rem;
+	width: 100%;
+	max-width: 110rem;
+	padding: 1.1rem 1rem;
+}
+.footer-col {
+	max-width: 33%;
+}
+.footer-col h4 {
+	color: var(--color-text);
+	margin-bottom: 1.2rem;
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+.footer-col p,
+.footer-col ul {
+	color: var(--color-soft);
+	font-size: 0.95rem;
+	line-height: 1.5;
+}
+
+.footer-col p {
+	cursor: pointer;
+	color: #aaa;
+	font-size: 1.1rem;
+	font-weight: 500;
+	transition: color 0.2s ease;
+}
+
+.footer-col p:hover {
+	color: #fff;
+	text-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+}
+
+.footer-col ul li {
+	margin-bottom: 0.5rem;
+}
+
+.footer-col ul li a {
+	color: #aaa;
+	font-size: 1.1rem;
+	font-weight: 500;
+	transition: color 0.2s ease;
+}
+
+.footer-col ul li a:hover {
+	color: #fff;
+	text-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+}
+
+/* ====== Social icons ====== */
+.social-icons {
+	display: flex;
+	gap: 0.6rem;
+	align-items: center;
+}
+
+.social-btn {
+	display: inline-grid;
+	place-items: center;
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	border: 0.12rem solid rgba(255, 255, 255, 0.08);
+	background: transparent;
+	transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.social-btn i {
+	font-size: 1.1rem;
+	color: var(--color-soft);
+}
+
+/* Hover effects for brand colors */
+.social-btn.facebook:hover {
+	background: #1877f2; /* Facebook blue */
+	box-shadow: 0 8px 25px rgba(24, 119, 242, 0.35);
+}
+.social-btn.facebook:hover i {
+	color: #fff;
+}
+
+.social-btn.twitter:hover {
+	background: #1da1f2; /* Twitter blue */
+	box-shadow: 0 8px 25px rgba(29, 161, 242, 0.35);
+}
+.social-btn.twitter:hover i {
+	color: #fff;
+}
+
+.social-btn.instagram:hover {
+	background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4); /* Instagram gradient */
+	box-shadow: 0 8px 25px rgba(221, 42, 123, 0.35);
+}
+.social-btn.instagram:hover i {
+	color: #fff;
+}
+
+.copyright {
+	margin-top: 1.1rem;
+	color: var(--color-soft);
+	font-size: 1rem;
+	font-weight: 600;
+	padding-top: 0.6rem;
 }
