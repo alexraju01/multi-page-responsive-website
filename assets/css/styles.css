@@ -242,18 +242,80 @@ main {
 /* Platforms */
 .platform-list {
 	display: flex;
-	gap: 0.6rem;
+	gap: 0.8rem;
 	flex-wrap: wrap;
 	margin-top: 0.6rem;
 }
+
 .platform-pill {
-	padding: 1rem 1.6rem;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.8rem 1.4rem;
 	border-radius: 0.8rem;
 	background: rgba(255, 255, 255, 0.02);
 	border: 0.08rem solid rgba(255, 255, 255, 0.03);
 	font-weight: 700;
 	font-size: small;
 	color: var(--color-soft);
+	cursor: pointer;
+	transition: all 0.25s ease;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4); /* subtle base shadow */
+}
+
+.platform-pill i {
+	font-size: 1rem;
+	color: inherit;
+	transition: color 0.25s ease;
+}
+
+/* This hver effect make the the items larger on hover */
+.platform-pill:hover {
+	scale: 1.1;
+}
+
+/* Hover states with glow */
+.platform-pill.pc:hover {
+	background: #2d89ef; /* desktop for windows blue */
+	color: #fff;
+	box-shadow: 0 6px 20px rgba(45, 137, 239, 0.6);
+}
+
+.platform-pill.ps5:hover {
+	background: #003791; /* PS5 drak blue */
+	color: #fff;
+	box-shadow: 0 6px 20px rgba(0, 55, 145, 0.6);
+}
+
+.platform-pill.xbox:hover {
+	background: #107c10; /* Xbox green */
+	color: #fff;
+	box-shadow: 0 6px 20px rgba(16, 124, 16, 0.6);
+}
+
+.platform-pill.switch:hover {
+	background: #e60012; /* switch red */
+	color: #fff;
+	box-shadow: 0 6px 20px rgba(230, 0, 18, 0.6);
+}
+
+.platform-pill.discord:hover {
+	background: #5865f2; /* Discord blurple */
+	color: #fff;
+	box-shadow: 0 6px 20px rgba(88, 101, 242, 0.6);
+}
+
+.platform-pill.twitch:hover {
+	background: #9146ff; /* Twitch purple */
+	color: #fff;
+	box-shadow: 0 6px 20px rgba(145, 70, 255, 0.6);
+}
+
+.platform-pill.steam:hover {
+	background: #1b2838; /* Steam dark */
+	color: #fff;
+	box-shadow: 0 6px 20px rgba(27, 40, 56, 0.6);
+	transform: translateY(-2px);
 }
 
 /* ###### FOOTER (wireframe) ###### */
