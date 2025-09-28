@@ -1,7 +1,7 @@
 /* ###### MAIN: Cards grid (wireframe) ###### */
 main {
 	padding: 2rem 1.25rem 3rem;
-	max-width: 110rem;
+	max-width: 130rem;
 	margin: 0 auto;
 }
 
@@ -18,7 +18,7 @@ main {
 
 .cards-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(clamp(25rem, 45vw, 30rem), 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(clamp(25rem, 45vw, 40rem), 1fr));
 	gap: 1.25rem;
 	padding: 0 1rem;
 }
@@ -61,7 +61,7 @@ main {
 
 .thumbnail {
 	width: 72px;
-	height: 72px;
+	aspect-ratio: 2/3;
 	border-radius: 0.9rem;
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
 	border: 0.08rem solid rgba(255, 255, 255, 0.03);
@@ -79,27 +79,40 @@ main {
 .meta {
 	display: flex;
 	flex-direction: column;
+	height: 100%;
 	gap: 0.4rem;
+	position: relative;
+	width: 100%;
 }
 
 .game-title {
-	font-size: 1.2rem;
+	font-size: 1.4rem;
 	font-weight: 700;
 	color: var(--color-text);
 }
 
 .game-info {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	gap: 0.4rem;
-	font-size: 0.95rem;
+	font-size: 1.1rem;
 	color: var(--color-soft);
+	height: 100%;
 }
 
-.release-date strong,
-.platforms strong {
+/* .release-date strong, */
+.release-date {
+	position: absolute;
+	bottom: 0;
+}
+
+.platforms {
+	position: absolute;
 	font-weight: 600;
 	color: var(--color-text);
+	right: 0;
+	bottom: 0;
 }
 
 /* Platform pills */
@@ -108,7 +121,7 @@ main {
 	padding: 0.3rem 0.8rem;
 	border-radius: 0.6rem;
 	font-weight: 600;
-	font-size: 0.85rem;
+	font-size: 1rem;
 	color: #aaa;
 	background: rgba(255, 255, 255, 0.02);
 	border: 0.08rem solid rgba(255, 255, 255, 0.03);
@@ -249,4 +262,41 @@ main {
 	color: #fff;
 	box-shadow: 0 6px 20px rgba(27, 40, 56, 0.6);
 	transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+	.small-pill {
+		color: #fff;
+		transform: translateY(-1px);
+	}
+
+	/* Brand colors for hover */
+	.small-pill.pc {
+		background: #2d89ef;
+		box-shadow: 0 6px 20px rgba(45, 137, 239, 0.6);
+	}
+	.small-pill.ps5 {
+		background: #003791;
+		box-shadow: 0 6px 20px rgba(0, 55, 145, 0.6);
+	}
+	.small-pill.xbox {
+		background: #107c10;
+		box-shadow: 0 6px 20px rgba(16, 124, 16, 0.6);
+	}
+	.small-pill.switch {
+		background: #e60012;
+		box-shadow: 0 6px 20px rgba(230, 0, 18, 0.6);
+	}
+	.small-pill.discord {
+		background: #5865f2;
+		box-shadow: 0 6px 20px rgba(88, 101, 242, 0.6);
+	}
+	.small-pill.twitch {
+		background: #9146ff;
+		box-shadow: 0 6px 20px rgba(145, 70, 255, 0.6);
+	}
+	.small-pill.steam {
+		background: #1b2838;
+		box-shadow: 0 6px 20px rgba(27, 40, 56, 0.6);
+	}
 }
