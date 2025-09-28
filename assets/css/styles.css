@@ -181,8 +181,9 @@ main {
 
 .cards-grid {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(auto-fill, minmax(clamp(25rem, 45vw, 30rem), 1fr));
 	gap: 1.25rem;
+	padding: 0 1rem;
 }
 
 /* Individual card */
@@ -205,32 +206,137 @@ main {
 	text-align: center;
 }
 
+/* .game-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 1.2rem;
+} */
+
 .game-row {
 	display: flex;
-	gap: 0.9rem;
 	align-items: center;
-	margin-top: 0.8rem;
+	gap: 1rem;
+	padding: 0.8rem;
+	background: rgba(255, 255, 255, 0.02);
+	border-radius: 0.9rem;
+	border: 0.08rem solid rgba(255, 255, 255, 0.03);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.game-row:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 20px rgba(255, 0, 85, 0.2); /* matches --color-accent */
+}
+
 .thumbnail {
 	width: 72px;
 	height: 72px;
 	border-radius: 0.9rem;
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
 	border: 0.08rem solid rgba(255, 255, 255, 0.03);
+	flex-shrink: 0;
+	overflow: hidden;
+}
+
+.thumbnail img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	border-radius: inherit;
+}
+
+.meta {
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+}
+
+.game-title {
+	font-size: 1.2rem;
+	font-weight: 700;
+	color: var(--color-text);
+}
+
+.game-info {
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+	font-size: 0.95rem;
+	color: var(--color-soft);
+}
+
+.release-date strong,
+.platforms strong {
+	font-weight: 600;
+	color: var(--color-text);
+}
+
+/* Platform pills */
+
+.small-pill {
+	padding: 0.3rem 0.8rem;
+	border-radius: 0.6rem;
+	font-weight: 600;
+	font-size: 0.85rem;
+	color: #aaa;
+	background: rgba(255, 255, 255, 0.02);
+	border: 0.08rem solid rgba(255, 255, 255, 0.03);
+	transition: all 0.25s ease;
+	cursor: pointer;
+}
+
+.small-pill:hover {
+	color: #fff;
+	transform: translateY(-1px);
+}
+
+/* Brand colors for hover */
+.small-pill.pc:hover {
+	background: #2d89ef;
+	box-shadow: 0 6px 20px rgba(45, 137, 239, 0.6);
+}
+.small-pill.ps5:hover {
+	background: #003791;
+	box-shadow: 0 6px 20px rgba(0, 55, 145, 0.6);
+}
+.small-pill.xbox:hover {
+	background: #107c10;
+	box-shadow: 0 6px 20px rgba(16, 124, 16, 0.6);
+}
+.small-pill.switch:hover {
+	background: #e60012;
+	box-shadow: 0 6px 20px rgba(230, 0, 18, 0.6);
+}
+.small-pill.discord:hover {
+	background: #5865f2;
+	box-shadow: 0 6px 20px rgba(88, 101, 242, 0.6);
+}
+.small-pill.twitch:hover {
+	background: #9146ff;
+	box-shadow: 0 6px 20px rgba(145, 70, 255, 0.6);
+}
+.small-pill.steam:hover {
+	background: #1b2838;
+	box-shadow: 0 6px 20px rgba(27, 40, 56, 0.6);
 }
 
 /* Top rated list */
 .top-list {
 	display: flex;
 	flex-direction: column;
-	gap: 0.4rem;
+	gap: 1rem;
 }
+
 .top-list li {
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
 	color: var(--color-soft);
 }
+
 .badge {
 	background: rgba(255, 0, 85, 0.12);
 	padding: 0.2rem 0.6rem;
@@ -242,7 +348,7 @@ main {
 /* Platforms */
 .platform-list {
 	display: flex;
-	gap: 0.8rem;
+	gap: 0.3rem;
 	flex-wrap: wrap;
 	margin-top: 0.6rem;
 }
