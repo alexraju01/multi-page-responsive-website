@@ -43,6 +43,7 @@ nav {
 	background-color: var(--color-nav-bg);
 	color: var(--color-text);
 	padding: 1.2rem 3rem;
+	height: 5.5rem;
 	border-bottom: 0.2rem solid var(--color-accent);
 	font-size: var(--font-size-nav);
 	font-weight: 600;
@@ -65,23 +66,72 @@ nav i {
 
 .menu-wrapper {
 	order: 2;
+	height: 100%;
 }
 
-/* Nav links */
+/* Nav links container */
 nav .nav-links {
 	display: flex;
+	align-items: center;
 	gap: 2rem;
 	margin-right: 10rem;
+	height: 100%;
+	list-style: none;
 }
 
 /* Links styling */
 .nav-links li a {
 	color: var(--color-text);
+	text-decoration: none;
+	position: relative;
+	padding: 0.4rem 0.8rem;
 	transition: color 0.2s ease-in-out;
 }
 
+/* Hover text color */
 .nav-links li a:hover {
 	color: var(--color-accent);
+}
+
+/* Accent corners on hover */
+.nav-links li a::before,
+.nav-links li a::after {
+	content: "";
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+/* Top-right corner */
+.nav-links li a::before {
+	top: 0;
+	right: 0;
+	border-top: 0.1rem solid var(--color-accent);
+	border-right: 0.1rem solid var(--color-accent);
+}
+
+/* Bottom-left corner */
+.nav-links li a::after {
+	bottom: 0;
+	left: 0;
+	border-bottom: 0.1rem solid var(--color-accent);
+	border-left: 0.1rem solid var(--color-accent);
+}
+
+/* Show corners on hover */
+.nav-links li a:hover::before,
+.nav-links li a:hover::after,
+.nav-links li a.active::after,
+.nav-links li a.active::before {
+	opacity: 1;
+}
+
+/* Active link */
+.nav-links li a.active {
+	color: var(--color-accent);
+	font-weight: 700;
 }
 
 /* Theme toggle */
@@ -93,7 +143,7 @@ nav .nav-links {
 }
 
 #theme-toggle {
-	display: none; /* hidden checkbox for CSS toggle */
+	display: none;
 }
 
 #theme-toggle:checked ~ body {
