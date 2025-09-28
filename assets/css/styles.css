@@ -38,46 +38,155 @@ body {
 
 nav {
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
+	justify-content: space-between;
 	background-color: var(--color-nav-bg);
 	color: var(--color-text);
-	padding: 1.6rem 3.2rem;
-	border-bottom: 0.2rem solid #ff0055;
+	padding: 1.2rem 3rem;
+	border-bottom: 0.2rem solid var(--color-accent);
 	font-size: var(--font-size-nav);
 	font-weight: 600;
 	letter-spacing: 0.1rem;
-	overflow: hidden;
+	position: relative;
 }
 
+/* Logo */
 nav .logo {
 	display: flex;
 	align-items: center;
 	gap: 0.8rem;
 	color: var(--color-accent);
+	order: 1; /* mobile order */
 }
 
 nav i {
 	font-size: 2rem;
 }
 
-nav ul {
+.menu-wrapper {
+	order: 2;
+}
+
+/* Nav links */
+nav .nav-links {
 	display: flex;
 	gap: 2rem;
 	margin-right: 10rem;
 }
 
-nav ul li a {
+/* Links styling */
+.nav-links li a {
 	color: var(--color-text);
 	transition: color 0.2s ease-in-out;
 }
 
-nav ul li a:hover {
+.nav-links li a:hover {
 	color: var(--color-accent);
 }
 
+/* Theme toggle */
 .toggle {
+	order: 3;
+	display: flex;
+	align-items: center;
 	cursor: pointer;
+}
+
+#theme-toggle {
+	display: none; /* hidden checkbox for CSS toggle */
+}
+
+#theme-toggle:checked ~ body {
+	background-color: var(--color-text);
+	color: #0a0a0a;
+}
+
+/* ================================
+   HAMBURGER MENU
+================================= */
+.menu-toggle {
+	display: none; /* hidden checkbox */
+}
+
+/* Hamburger styling */
+.hamburger {
+	display: none; /* only show on mobile */
+	flex-direction: column;
+	gap: 5px;
+	cursor: pointer;
+}
+
+.hamburger span {
+	display: block;
+	width: 25px;
+	height: 3px;
+	background-color: var(--color-text);
+	border-radius: 2px;
+}
+
+/* ================================
+   MOBILE RESPONSIVE
+================================= */
+@media (max-width: 900px) {
+	nav {
+		position: relative;
+	}
+
+	/* Show hamburger on mobile */
+	.hamburger {
+		display: flex;
+	}
+
+	/* Dropdown container */
+	.menu-wrapper {
+		position: relative; /* relative for dropdown positioning */
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	/* Nav links dropdown */
+	.menu-wrapper .nav-links {
+		position: absolute;
+		margin-top: 1.5rem;
+		top: 100%;
+		left: 0;
+		flex-direction: column;
+		background-color: var(--color-nav-bg);
+		width: 200px;
+		padding: 1rem;
+		display: none; /* hidden by default */
+		border: 0.15rem solid rgba(255, 255, 255, 0.03);
+		border-bottom-left-radius: 0.6rem;
+		border-bottom-right-radius: 0.6rem;
+		z-index: 100;
+	}
+
+	.nav-links li {
+		color: var(--color-accent);
+		border-bottom: 1px solid var(--color-accent);
+	}
+
+	/* Show nav when checkbox is checked */
+	#menu-toggle:checked ~ .nav-links {
+		display: flex;
+	}
+
+	.nav-links li {
+		margin: 1rem 0;
+	}
+
+	.nav-links li a {
+		font-size: 1rem;
+	}
+
+	/* Keep logo and theme toggle order */
+	nav .logo {
+		order: 2;
+	}
+	nav .toggle {
+		order: 3;
+	}
 }
 
 /* ##### HERO SECTION ###### */
@@ -209,15 +318,6 @@ main {
 	color: var(--color-text);
 	text-align: center;
 }
-
-/* .game-list {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	display: flex;
-	flex-direction: column;
-	gap: 1.2rem;
-} */
 
 .game-row {
 	display: flex;

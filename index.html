@@ -22,27 +22,33 @@
 	</head>
 	<body>
 		<header>
-			<!-- ===== NAVBAR SECTION ===== -->
 			<nav>
-				<!-- Logo -->
+				<div class="menu-wrapper">
+					<input type="checkbox" id="menu-toggle" class="menu-toggle" />
+					<label for="menu-toggle" class="hamburger">
+						<span></span>
+						<span></span>
+						<span></span>
+					</label>
+
+					<ul class="nav-links">
+						<li><a href="#games">Games</a></li>
+						<li><a href="#platform">Platform</a></li>
+						<li><a href="#news">News</a></li>
+						<li><a href="#community">Community</a></li>
+					</ul>
+				</div>
+
 				<div class="logo">
 					<i class="fa-solid fa-gamepad"></i>
 					<span>NextLevel</span>
 				</div>
 
-				<ul class="nav-links">
-					<li><a href="#games">Games</a></li>
-					<li><a href="#platform">Platform</a></li>
-					<li><a href="#news">News</a></li>
-					<li><a href="#community">Community</a></li>
-				</ul>
-				<!-- Theme Toggler -->
 				<div class="toggle">
-					<i class="fa-solid fa-moon"></i>
+					<input type="checkbox" id="theme-toggle" />
+					<label for="theme-toggle"><i class="fa-solid fa-moon"></i></label>
 				</div>
 			</nav>
-
-			<!-- ===== HERO SECTION ===== -->
 			<section id="hero">
 				<div class="hero-content">
 					<h1>Level Up Your Gaming Experience</h1>
