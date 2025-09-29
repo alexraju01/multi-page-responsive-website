@@ -1,0 +1,127 @@
+.platforms-section {
+	margin: 0 0 2.2rem 0;
+	color: var(--color-soft);
+	font-size: 1.6rem;
+}
+
+.platform-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(clamp(18rem, 30vw, 30rem), 1fr));
+	gap: 2rem;
+	padding: 0 1rem;
+	margin: 2.4rem 0 2.4rem 0;
+}
+
+.platform-card {
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.01), var(--glass));
+	border: 0.1rem solid rgba(255, 255, 255, 0.03);
+	padding: 1rem;
+	display: flex;
+	align-items: center;
+	gap: 1.2rem;
+	border-radius: 14px;
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+	transition: all 0.3s ease;
+}
+
+.platform-card i {
+	font-size: 3.2rem;
+	min-width: 56px;
+	text-align: center;
+	padding: 0.6rem;
+	border-radius: 10px;
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+	border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.platform-card h3 {
+	margin: 0 0 0.3rem 0;
+	font-size: 1.6rem;
+}
+.platform-card p {
+	color: var(--color-soft);
+	font-size: 1.3rem;
+}
+
+.platform-card:hover {
+	cursor: pointer;
+	scale: 1.1;
+	box-shadow: 0 18px 36px rgba(0, 0, 0, 0.7);
+}
+
+.platform-card[data-platform="playstation"] i,
+.platform-card .ps5 {
+	color: #6aa0ff;
+}
+.platform-card[data-platform="xbox"] i,
+.platform-card .xbox {
+	color: #2bd24a;
+}
+.platform-card[data-platform="switch"] i,
+.platform-card .switch {
+	color: #ff7b7b;
+}
+.platform-card[data-platform="mobile"] i,
+.platform-card .mobile {
+	color: #ffb86b;
+}
+.platform-card[data-platform="cloud"] i,
+.platform-card .cloud {
+	color: #9b8cff;
+}
+.platform-card[data-platform="pc"] i,
+.platform-card .pc {
+	color: var(--color-accent);
+}
+
+.cta-row {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+
+.btn-primary {
+	display: inline-block;
+	padding: 0.9rem 1.4rem;
+	border-radius: 12px;
+	background: linear-gradient(90deg, var(--color-accent), #ff4477);
+	color: #fff;
+	text-decoration: none;
+	font-weight: 700;
+	box-shadow: 0 8px 26px rgba(255, 0, 85, 0.12);
+}
+
+.btn-ghost {
+	display: inline-block;
+	padding: 0.9rem 1.4rem;
+	border-radius: 12px;
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	color: var(--color-text);
+	text-decoration: none;
+	font-weight: 600;
+	background: transparent;
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+	.platforms-header h2 {
+		font-size: 2.4rem;
+	}
+	.platform-card {
+		padding: 1.1rem;
+		border-radius: 10px;
+	}
+	.platform-card i {
+		font-size: 2.4rem;
+		min-width: 44px;
+	}
+	.cta-row {
+		flex-direction: column;
+		align-items: stretch;
+	}
+	.btn-primary,
+	.btn-ghost {
+		width: 100%;
+		text-align: center;
+	}
+}
