@@ -27,9 +27,12 @@
 
 html {
 	font-size: var(--font-size-base);
+	height: 100%;
 }
 
 body {
 	background-color: var(--color-bg);
 	color: var(--color-text);
+	height: 100%;
+	position: relative;
 }

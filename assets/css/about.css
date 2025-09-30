@@ -1,0 +1,177 @@
+/* ===== ABOUT US PAGE STYLES ===== */
+/* main {
+	font-family: var(--font-family-base);
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	padding: 4rem 2rem;
+} */
+
+/* ----- HERO SECTION ----- */
+.about-hero {
+	text-align: center;
+	padding: 4rem 2rem;
+	background: var(--glass);
+	border-radius: 1rem;
+	margin-bottom: 4rem;
+}
+
+.about-hero h1 {
+	font-size: 4rem;
+	color: var(--color-accent);
+	margin-bottom: 1rem;
+}
+
+.about-hero p {
+	font-size: 1.8rem;
+	color: var(--color-soft);
+	max-width: 800px;
+	margin: 0 auto 2rem auto;
+}
+
+.about-hero img {
+	width: 100%;
+	max-width: 800px;
+	border-radius: 1rem;
+	margin-top: 2rem;
+}
+
+/* ----- MISSION SECTION ----- */
+.about-mission {
+	text-align: center;
+	margin-bottom: 4rem;
+}
+
+.about-mission h2 {
+	font-size: 3rem;
+	color: var(--color-accent);
+	margin-bottom: 1.5rem;
+}
+
+.about-mission p {
+	font-size: 1.6rem;
+	color: var(--color-soft);
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+/* ----- VALUES SECTION ----- */
+.about-values {
+	margin-bottom: 4rem;
+}
+
+.about-values h2 {
+	font-size: 3rem;
+	color: var(--color-accent);
+	text-align: center;
+	margin-bottom: 3rem;
+}
+
+.values-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 2rem;
+	text-align: center;
+}
+
+.value-item {
+	background: var(--glass);
+	border: 1px solid var(--color-border);
+	border-radius: 1rem;
+	padding: 2rem 1rem;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-item i {
+	font-size: 3rem;
+	color: var(--color-accent);
+	margin-bottom: 1rem;
+}
+
+.value-item h3 {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+
+.value-item p {
+	font-size: 1.5rem;
+	color: var(--color-soft);
+}
+
+.value-item:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 0 2rem var(--color-accent);
+}
+
+/* ----- TEAM SECTION ----- */
+.about-team {
+	text-align: center;
+	margin-bottom: 4rem;
+}
+
+.about-team h2 {
+	font-size: 3rem;
+	color: var(--color-accent);
+	margin-bottom: 1rem;
+}
+
+.about-team p {
+	font-size: 1.6rem;
+	color: var(--color-soft);
+	max-width: 900px;
+	margin: 0 auto 3rem auto;
+}
+
+.team-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 2rem;
+	justify-items: center;
+}
+
+.team-member {
+	background: var(--glass);
+	border: 1px solid var(--color-border);
+	border-radius: 1rem;
+	padding: 2rem 1rem;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member img {
+	width: 150px;
+	height: 150px;
+	object-fit: cover;
+	border-radius: 50%;
+	margin-bottom: 1rem;
+}
+
+.team-member h4 {
+	font-size: 1.8rem;
+	color: var(--color-accent);
+	margin-bottom: 0.5rem;
+}
+
+.team-member p {
+	font-size: 1.5rem;
+	color: var(--color-soft);
+}
+
+.team-member:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 0 2rem var(--color-accent);
+}
+
+/* ----- RESPONSIVE ----- */
+@media (max-width: 768px) {
+	.about-hero h1 {
+		font-size: 3rem;
+	}
+	.about-mission h2,
+	.about-values h2,
+	.about-team h2 {
+		font-size: 2.5rem;
+	}
+	.value-item h3,
+	.team-member h4 {
+		font-size: 1.6rem;
+	}
+}
