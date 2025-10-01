@@ -7,4 +7,4 @@ The website is a gaming platform that show top games and supported platforms lik
 
 The project is deployed with GitHub Pages.  
 Project Preview: [Next Level](https://alexraju01.github.io/multi-page-responsive-website/)
-Wireframe Preview [WireFrame](68dd9920dfaffde9f2753fa9)
+Wireframe Preview: ![WireFrame](assets/images/wireframe.png)
